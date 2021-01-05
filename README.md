@@ -4,7 +4,7 @@ eMag app clone
 ## Project setup (35')
 * [x] dependencies (10')
 * [x] redux (10')
-* [ ] services config (15')
+* [x] services config (15')
 
 ## Loading screen (10')
 * [ ] show app logo for 3 secs (10')
