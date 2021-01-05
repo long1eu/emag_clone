@@ -7,7 +7,7 @@ eMag app clone
 * [x] services config (15')
 
 ## Loading screen (10')
-* [ ] show app logo for 3 secs (10')
+* [x] show app logo for 3 secs (10')
 
 ## Authentication (85')
 * [ ] login/register with email and password (15')
