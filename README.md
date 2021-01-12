@@ -10,7 +10,7 @@ eMag app clone
 * [x] show app logo for 3 secs (10')
 
 ## Authentication (85')
-* [ ] login/register with email and password (15')
+* [x] login/register with email and password (15')
 * [ ] login/register with google (25')
 * [ ] login/register with apple (25')
 * [ ] logout (10')

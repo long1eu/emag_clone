@@ -11,3 +11,5 @@ abstract class AppAction {
 abstract class ErrorAction extends AppAction {
   const ErrorAction();
 }
+
+typedef ActionResponse = void Function(AppAction action);
