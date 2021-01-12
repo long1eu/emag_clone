@@ -9,6 +9,7 @@ Reducer<AuthState> authReducer = combineReducers(<Reducer<AuthState>>[
   TypedReducer<AuthState, LoginSuccessful>(_loginSuccessful),
   TypedReducer<AuthState, RegisterSuccessful>(_registerSuccessful),
   TypedReducer<AuthState, UpdateRegisterInfo>(_updateRegisterInfo),
+  TypedReducer<AuthState, LoginWithGoogleSuccessful>(_loginWithGoogleSuccessful),
 ]);
 
 AuthState _loginSuccessful(AuthState state, LoginSuccessful action) {
@@ -31,4 +32,8 @@ AuthState _updateRegisterInfo(AuthState state, UpdateRegisterInfo action) {
       b.info = RegisterInfo().toBuilder();
     }
   });
+}
+
+AuthState _loginWithGoogleSuccessful(AuthState state, LoginWithGoogleSuccessful action) {
+  return state.rebuild((AuthStateBuilder b) => b.user = action.user?.toBuilder());
 }

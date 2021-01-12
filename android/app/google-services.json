@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "978829925019-171bimu9b95bssi3b6cgrm9svc5lg3ap.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "eu.long1.emag_clone",
+            "certificate_hash": "e7de1070a1662ff3a9d0c49809697e4a9989ee11"
+          }
+        },
+        {
           "client_id": "978829925019-cqg71rd31uoejdoi1kcftl5ees86t28b.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "978829925019-cqg71rd31uoejdoi1kcftl5ees86t28b.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "978829925019-vpee85brmb7fr01049sa2k6fd7e86luu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "eu.long1.emagClone"
+              }
             }
           ]
         }

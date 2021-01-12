@@ -3,6 +3,7 @@
 // on 05/01/2021
 
 import 'package:emag_clone/src/presentation/home.dart';
+import 'package:emag_clone/src/presentation/login/reset_page.dart';
 import 'package:emag_clone/src/presentation/register/name_page.dart';
 import 'package:emag_clone/src/presentation/register/password_page.dart';
 import 'package:emag_clone/src/presentation/register/register_page.dart';
@@ -14,11 +15,13 @@ class AppRoutes {
   static const String register = '/register';
   static const String name = '/name';
   static const String password = '/password';
+  static const String resetPassword = '/resetPassword';
 
   static final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
     home: (BuildContext context) => const Home(),
     register: (BuildContext context) => const RegisterPage(),
     name: (BuildContext context) => const NamePage(),
     password: (BuildContext context) => const PasswordPage(),
+    resetPassword: (BuildContext context) => const ResetPasswordPage(),
   };
 }

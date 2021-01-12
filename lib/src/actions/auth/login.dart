@@ -11,5 +11,5 @@ abstract class Login with _$Login implements AppAction {
   const factory Login.successful(AppUser user) = LoginSuccessful;
 
   @Implements(ErrorAction)
-  const factory Login.error(StateError error) = LoginError;
+  const factory Login.error(Object error) = LoginError;
 }
