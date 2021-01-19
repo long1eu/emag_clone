@@ -83,4 +83,8 @@ class AuthApi {
     await _auth.signOut();
     await _google.signOut();
   }
+
+  Future<void> updateCart(String uid, Cart cart) async {
+    await _firestore.doc('users/$uid').update(<String, dynamic>{'cart': cart.json});
+  }
 }

@@ -2744,3 +2744,443 @@ abstract class UpdateRegisterInfo$ implements UpdateRegisterInfo {
   @override
   $UpdateRegisterInfo$CopyWith<UpdateRegisterInfo$> get copyWith;
 }
+
+/// @nodoc
+class _$UpdateCartTearOff {
+  const _$UpdateCartTearOff();
+
+// ignore: unused_element
+  UpdateCart$ call(Cart cart) {
+    return UpdateCart$(
+      cart,
+    );
+  }
+
+// ignore: unused_element
+  UpdateCartSuccessful successful(Cart cart) {
+    return UpdateCartSuccessful(
+      cart,
+    );
+  }
+
+// ignore: unused_element
+  UpdateCartError error(Object error) {
+    return UpdateCartError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $UpdateCart = _$UpdateCartTearOff();
+
+/// @nodoc
+mixin _$UpdateCart {
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(Cart cart), {
+    @required Result successful(Cart cart),
+    @required Result error(Object error),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(Cart cart), {
+    Result successful(Cart cart),
+    Result error(Object error),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(UpdateCart$ value), {
+    @required Result successful(UpdateCartSuccessful value),
+    @required Result error(UpdateCartError value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(UpdateCart$ value), {
+    Result successful(UpdateCartSuccessful value),
+    Result error(UpdateCartError value),
+    @required Result orElse(),
+  });
+}
+
+/// @nodoc
+abstract class $UpdateCartCopyWith<$Res> {
+  factory $UpdateCartCopyWith(
+          UpdateCart value, $Res Function(UpdateCart) then) =
+      _$UpdateCartCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$UpdateCartCopyWithImpl<$Res> implements $UpdateCartCopyWith<$Res> {
+  _$UpdateCartCopyWithImpl(this._value, this._then);
+
+  final UpdateCart _value;
+  // ignore: unused_field
+  final $Res Function(UpdateCart) _then;
+}
+
+/// @nodoc
+abstract class $UpdateCart$CopyWith<$Res> {
+  factory $UpdateCart$CopyWith(
+          UpdateCart$ value, $Res Function(UpdateCart$) then) =
+      _$UpdateCart$CopyWithImpl<$Res>;
+  $Res call({Cart cart});
+}
+
+/// @nodoc
+class _$UpdateCart$CopyWithImpl<$Res> extends _$UpdateCartCopyWithImpl<$Res>
+    implements $UpdateCart$CopyWith<$Res> {
+  _$UpdateCart$CopyWithImpl(
+      UpdateCart$ _value, $Res Function(UpdateCart$) _then)
+      : super(_value, (v) => _then(v as UpdateCart$));
+
+  @override
+  UpdateCart$ get _value => super._value as UpdateCart$;
+
+  @override
+  $Res call({
+    Object cart = freezed,
+  }) {
+    return _then(UpdateCart$(
+      cart == freezed ? _value.cart : cart as Cart,
+    ));
+  }
+}
+
+/// @nodoc
+class _$UpdateCart$ implements UpdateCart$ {
+  const _$UpdateCart$(this.cart) : assert(cart != null);
+
+  @override
+  final Cart cart;
+
+  @override
+  String toString() {
+    return 'UpdateCart(cart: $cart)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UpdateCart$ &&
+            (identical(other.cart, cart) ||
+                const DeepCollectionEquality().equals(other.cart, cart)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(cart);
+
+  @override
+  $UpdateCart$CopyWith<UpdateCart$> get copyWith =>
+      _$UpdateCart$CopyWithImpl<UpdateCart$>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(Cart cart), {
+    @required Result successful(Cart cart),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return $default(cart);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(Cart cart), {
+    Result successful(Cart cart),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if ($default != null) {
+      return $default(cart);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(UpdateCart$ value), {
+    @required Result successful(UpdateCartSuccessful value),
+    @required Result error(UpdateCartError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(UpdateCart$ value), {
+    Result successful(UpdateCartSuccessful value),
+    Result error(UpdateCartError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateCart$ implements UpdateCart {
+  const factory UpdateCart$(Cart cart) = _$UpdateCart$;
+
+  Cart get cart;
+  $UpdateCart$CopyWith<UpdateCart$> get copyWith;
+}
+
+/// @nodoc
+abstract class $UpdateCartSuccessfulCopyWith<$Res> {
+  factory $UpdateCartSuccessfulCopyWith(UpdateCartSuccessful value,
+          $Res Function(UpdateCartSuccessful) then) =
+      _$UpdateCartSuccessfulCopyWithImpl<$Res>;
+  $Res call({Cart cart});
+}
+
+/// @nodoc
+class _$UpdateCartSuccessfulCopyWithImpl<$Res>
+    extends _$UpdateCartCopyWithImpl<$Res>
+    implements $UpdateCartSuccessfulCopyWith<$Res> {
+  _$UpdateCartSuccessfulCopyWithImpl(
+      UpdateCartSuccessful _value, $Res Function(UpdateCartSuccessful) _then)
+      : super(_value, (v) => _then(v as UpdateCartSuccessful));
+
+  @override
+  UpdateCartSuccessful get _value => super._value as UpdateCartSuccessful;
+
+  @override
+  $Res call({
+    Object cart = freezed,
+  }) {
+    return _then(UpdateCartSuccessful(
+      cart == freezed ? _value.cart : cart as Cart,
+    ));
+  }
+}
+
+/// @nodoc
+class _$UpdateCartSuccessful implements UpdateCartSuccessful {
+  const _$UpdateCartSuccessful(this.cart) : assert(cart != null);
+
+  @override
+  final Cart cart;
+
+  @override
+  String toString() {
+    return 'UpdateCart.successful(cart: $cart)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UpdateCartSuccessful &&
+            (identical(other.cart, cart) ||
+                const DeepCollectionEquality().equals(other.cart, cart)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(cart);
+
+  @override
+  $UpdateCartSuccessfulCopyWith<UpdateCartSuccessful> get copyWith =>
+      _$UpdateCartSuccessfulCopyWithImpl<UpdateCartSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(Cart cart), {
+    @required Result successful(Cart cart),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return successful(cart);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(Cart cart), {
+    Result successful(Cart cart),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (successful != null) {
+      return successful(cart);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(UpdateCart$ value), {
+    @required Result successful(UpdateCartSuccessful value),
+    @required Result error(UpdateCartError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(UpdateCart$ value), {
+    Result successful(UpdateCartSuccessful value),
+    Result error(UpdateCartError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateCartSuccessful implements UpdateCart {
+  const factory UpdateCartSuccessful(Cart cart) = _$UpdateCartSuccessful;
+
+  Cart get cart;
+  $UpdateCartSuccessfulCopyWith<UpdateCartSuccessful> get copyWith;
+}
+
+/// @nodoc
+abstract class $UpdateCartErrorCopyWith<$Res> {
+  factory $UpdateCartErrorCopyWith(
+          UpdateCartError value, $Res Function(UpdateCartError) then) =
+      _$UpdateCartErrorCopyWithImpl<$Res>;
+  $Res call({Object error});
+}
+
+/// @nodoc
+class _$UpdateCartErrorCopyWithImpl<$Res> extends _$UpdateCartCopyWithImpl<$Res>
+    implements $UpdateCartErrorCopyWith<$Res> {
+  _$UpdateCartErrorCopyWithImpl(
+      UpdateCartError _value, $Res Function(UpdateCartError) _then)
+      : super(_value, (v) => _then(v as UpdateCartError));
+
+  @override
+  UpdateCartError get _value => super._value as UpdateCartError;
+
+  @override
+  $Res call({
+    Object error = freezed,
+  }) {
+    return _then(UpdateCartError(
+      error == freezed ? _value.error : error,
+    ));
+  }
+}
+
+@Implements(ErrorAction)
+
+/// @nodoc
+class _$UpdateCartError implements UpdateCartError {
+  const _$UpdateCartError(this.error) : assert(error != null);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'UpdateCart.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UpdateCartError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @override
+  $UpdateCartErrorCopyWith<UpdateCartError> get copyWith =>
+      _$UpdateCartErrorCopyWithImpl<UpdateCartError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(Cart cart), {
+    @required Result successful(Cart cart),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(Cart cart), {
+    Result successful(Cart cart),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(UpdateCart$ value), {
+    @required Result successful(UpdateCartSuccessful value),
+    @required Result error(UpdateCartError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(UpdateCart$ value), {
+    Result successful(UpdateCartSuccessful value),
+    Result error(UpdateCartError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateCartError implements UpdateCart, ErrorAction {
+  const factory UpdateCartError(Object error) = _$UpdateCartError;
+
+  Object get error;
+  $UpdateCartErrorCopyWith<UpdateCartError> get copyWith;
+}

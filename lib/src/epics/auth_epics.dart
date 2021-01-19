@@ -26,6 +26,7 @@ class AuthEpics {
       TypedEpic<AppState, LoginWithGoogle$>(_loginWithGoogle),
       TypedEpic<AppState, Logout$>(_logout),
       TypedEpic<AppState, ForgotPassword$>(_forgotPassword),
+      TypedEpic<AppState, UpdateCart$>(_updateCart),
     ]);
   }
 
@@ -94,5 +95,13 @@ class AuthEpics {
             .asyncMap((ForgotPassword$ action) => _api.forgotPassword(action.email))
             .map((_) => const ForgotPassword.successful())
             .onErrorReturnWith((dynamic error) => ForgotPassword.error(error)));
+  }
+
+  Stream<AppAction> _updateCart(Stream<UpdateCart$> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((UpdateCart$ action) => Stream<UpdateCart$>.value(action)
+            .asyncMap((UpdateCart$ action) => _api.updateCart(store.state.auth.user.uid, action.cart))
+            .map((_) => UpdateCart.successful(action.cart))
+            .onErrorReturnWith((dynamic error) => UpdateCart.error(error)));
   }
 }

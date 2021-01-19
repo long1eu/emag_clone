@@ -16,6 +16,7 @@ part 'login_with_google.dart';
 part 'logout.dart';
 part 'register.dart';
 part 'set.dart';
+part 'update_cart.dart';
 
 
 

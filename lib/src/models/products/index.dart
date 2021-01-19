@@ -10,6 +10,6 @@ import 'package:built_value/serializer.dart';
 import 'package:emag_clone/src/models/serializers.dart';
 
 part 'index.g.dart';
-part 'products_state.dart';
-part 'product_state.dart';
 part 'product.dart';
+part 'product_state.dart';
+part 'products_state.dart';

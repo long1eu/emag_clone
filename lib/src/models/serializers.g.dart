@@ -10,10 +10,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AppState.serializer)
       ..add(AppUser.serializer)
       ..add(AuthState.serializer)
+      ..add(Cart.serializer)
+      ..add(CartItem.serializer)
       ..add(Product.serializer)
       ..add(ProductState.serializer)
       ..add(ProductsState.serializer)
       ..add(RegisterInfo.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(CartItem)]),
+          () => new ListBuilder<CartItem>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Product)]),
           () => new ListBuilder<Product>())

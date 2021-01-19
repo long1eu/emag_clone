@@ -2,7 +2,7 @@
 // Lung Razvan <long1eu>
 // on 19/01/2021
 
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:emag_clone/src/containers/auth/index.dart';
 import 'package:emag_clone/src/containers/products/index.dart';
 import 'package:emag_clone/src/models/index.dart';
 import 'package:emag_clone/src/presentation/products/product_item.dart';
@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 
 class ProductsPage extends StatelessWidget {
   const ProductsPage({Key key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +37,15 @@ class ProductsPage extends StatelessWidget {
                   Text(
                     'Tap to search',
                     style: Theme.of(context).textTheme.bodyText1,
+                  ),
+                  UserContainer(
+                    builder: (BuildContext context, AppUser user) {
+                      if (user.cart == null) {
+                        return Container();
+                      }
+
+                      return Text('${user.cart?.totalProducts}');
+                    },
                   ),
                 ],
               ),
