@@ -5,6 +5,7 @@
 import 'package:emag_clone/src/actions/index.dart';
 import 'package:emag_clone/src/models/index.dart';
 import 'package:emag_clone/src/reducer/auth_reducer.dart';
+import 'package:emag_clone/src/reducer/products_reducer.dart';
 import 'package:redux/redux.dart';
 
 Reducer<AppState> reducer = combineReducers(<Reducer<AppState>>[
@@ -15,7 +16,9 @@ Reducer<AppState> reducer = combineReducers(<Reducer<AppState>>[
 AppState _reducer(AppState state, dynamic action) {
   print(action);
   return state.rebuild((AppStateBuilder b) {
-    b.auth = authReducer(state.auth, action).toBuilder();
+    b
+      ..auth = authReducer(state.auth, action).toBuilder()
+      ..products = productsReducer(state.products, action).toBuilder();
   });
 }
 

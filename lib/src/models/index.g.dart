@@ -21,6 +21,9 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
       'auth',
       serializers.serialize(object.auth,
           specifiedType: const FullType(AuthState)),
+      'products',
+      serializers.serialize(object.products,
+          specifiedType: const FullType(ProductsState)),
     ];
 
     return result;
@@ -41,6 +44,10 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
           result.auth.replace(serializers.deserialize(value,
               specifiedType: const FullType(AuthState)) as AuthState);
           break;
+        case 'products':
+          result.products.replace(serializers.deserialize(value,
+              specifiedType: const FullType(ProductsState)) as ProductsState);
+          break;
       }
     }
 
@@ -51,13 +58,18 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
 class _$AppState extends AppState {
   @override
   final AuthState auth;
+  @override
+  final ProductsState products;
 
   factory _$AppState([void Function(AppStateBuilder) updates]) =>
       (new AppStateBuilder()..update(updates)).build();
 
-  _$AppState._({this.auth}) : super._() {
+  _$AppState._({this.auth, this.products}) : super._() {
     if (auth == null) {
       throw new BuiltValueNullFieldError('AppState', 'auth');
+    }
+    if (products == null) {
+      throw new BuiltValueNullFieldError('AppState', 'products');
     }
   }
 
@@ -71,17 +83,21 @@ class _$AppState extends AppState {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AppState && auth == other.auth;
+    return other is AppState &&
+        auth == other.auth &&
+        products == other.products;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(0, auth.hashCode));
+    return $jf($jc($jc(0, auth.hashCode), products.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AppState')..add('auth', auth))
+    return (newBuiltValueToStringHelper('AppState')
+          ..add('auth', auth)
+          ..add('products', products))
         .toString();
   }
 }
@@ -93,11 +109,17 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   AuthStateBuilder get auth => _$this._auth ??= new AuthStateBuilder();
   set auth(AuthStateBuilder auth) => _$this._auth = auth;
 
+  ProductsStateBuilder _products;
+  ProductsStateBuilder get products =>
+      _$this._products ??= new ProductsStateBuilder();
+  set products(ProductsStateBuilder products) => _$this._products = products;
+
   AppStateBuilder();
 
   AppStateBuilder get _$this {
     if (_$v != null) {
       _auth = _$v.auth?.toBuilder();
+      _products = _$v.products?.toBuilder();
       _$v = null;
     }
     return this;
@@ -120,12 +142,15 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState build() {
     _$AppState _$result;
     try {
-      _$result = _$v ?? new _$AppState._(auth: auth.build());
+      _$result = _$v ??
+          new _$AppState._(auth: auth.build(), products: products.build());
     } catch (_) {
       String _$failedField;
       try {
         _$failedField = 'auth';
         auth.build();
+        _$failedField = 'products';
+        products.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'AppState', _$failedField, e.toString());

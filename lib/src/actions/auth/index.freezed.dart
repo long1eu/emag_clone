@@ -427,22 +427,24 @@ abstract class ForgotPasswordError implements ForgotPassword, ErrorAction {
 }
 
 /// @nodoc
-class _$LogoutTearOff {
-  const _$LogoutTearOff();
+class _$InitializeAppTearOff {
+  const _$InitializeAppTearOff();
 
 // ignore: unused_element
-  Logout$ call() {
-    return const Logout$();
+  InitializeApp$ call() {
+    return const InitializeApp$();
   }
 
 // ignore: unused_element
-  LogoutSuccessful successful() {
-    return const LogoutSuccessful();
+  InitializeAppSuccessful successful(AppUser user) {
+    return InitializeAppSuccessful(
+      user,
+    );
   }
 
 // ignore: unused_element
-  LogoutError error(Object error) {
-    return LogoutError(
+  InitializeAppError error(Object error) {
+    return InitializeAppError(
       error,
     );
   }
@@ -450,81 +452,86 @@ class _$LogoutTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $Logout = _$LogoutTearOff();
+const $InitializeApp = _$InitializeAppTearOff();
 
 /// @nodoc
-mixin _$Logout {
+mixin _$InitializeApp {
   @optionalTypeArgs
   Result when<Result extends Object>(
     Result $default(), {
-    @required Result successful(),
+    @required Result successful(AppUser user),
     @required Result error(Object error),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>(
     Result $default(), {
-    Result successful(),
+    Result successful(AppUser user),
     Result error(Object error),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>(
-    Result $default(Logout$ value), {
-    @required Result successful(LogoutSuccessful value),
-    @required Result error(LogoutError value),
+    Result $default(InitializeApp$ value), {
+    @required Result successful(InitializeAppSuccessful value),
+    @required Result error(InitializeAppError value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>(
-    Result $default(Logout$ value), {
-    Result successful(LogoutSuccessful value),
-    Result error(LogoutError value),
+    Result $default(InitializeApp$ value), {
+    Result successful(InitializeAppSuccessful value),
+    Result error(InitializeAppError value),
     @required Result orElse(),
   });
 }
 
 /// @nodoc
-abstract class $LogoutCopyWith<$Res> {
-  factory $LogoutCopyWith(Logout value, $Res Function(Logout) then) =
-      _$LogoutCopyWithImpl<$Res>;
+abstract class $InitializeAppCopyWith<$Res> {
+  factory $InitializeAppCopyWith(
+          InitializeApp value, $Res Function(InitializeApp) then) =
+      _$InitializeAppCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LogoutCopyWithImpl<$Res> implements $LogoutCopyWith<$Res> {
-  _$LogoutCopyWithImpl(this._value, this._then);
+class _$InitializeAppCopyWithImpl<$Res>
+    implements $InitializeAppCopyWith<$Res> {
+  _$InitializeAppCopyWithImpl(this._value, this._then);
 
-  final Logout _value;
+  final InitializeApp _value;
   // ignore: unused_field
-  final $Res Function(Logout) _then;
+  final $Res Function(InitializeApp) _then;
 }
 
 /// @nodoc
-abstract class $Logout$CopyWith<$Res> {
-  factory $Logout$CopyWith(Logout$ value, $Res Function(Logout$) then) =
-      _$Logout$CopyWithImpl<$Res>;
+abstract class $InitializeApp$CopyWith<$Res> {
+  factory $InitializeApp$CopyWith(
+          InitializeApp$ value, $Res Function(InitializeApp$) then) =
+      _$InitializeApp$CopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$Logout$CopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res>
-    implements $Logout$CopyWith<$Res> {
-  _$Logout$CopyWithImpl(Logout$ _value, $Res Function(Logout$) _then)
-      : super(_value, (v) => _then(v as Logout$));
+class _$InitializeApp$CopyWithImpl<$Res>
+    extends _$InitializeAppCopyWithImpl<$Res>
+    implements $InitializeApp$CopyWith<$Res> {
+  _$InitializeApp$CopyWithImpl(
+      InitializeApp$ _value, $Res Function(InitializeApp$) _then)
+      : super(_value, (v) => _then(v as InitializeApp$));
 
   @override
-  Logout$ get _value => super._value as Logout$;
+  InitializeApp$ get _value => super._value as InitializeApp$;
 }
 
 /// @nodoc
-class _$Logout$ implements Logout$ {
-  const _$Logout$();
+class _$InitializeApp$ implements InitializeApp$ {
+  const _$InitializeApp$();
 
   @override
   String toString() {
-    return 'Logout()';
+    return 'InitializeApp()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Logout$);
+    return identical(this, other) || (other is InitializeApp$);
   }
 
   @override
@@ -534,7 +541,7 @@ class _$Logout$ implements Logout$ {
   @optionalTypeArgs
   Result when<Result extends Object>(
     Result $default(), {
-    @required Result successful(),
+    @required Result successful(AppUser user),
     @required Result error(Object error),
   }) {
     assert($default != null);
@@ -547,7 +554,7 @@ class _$Logout$ implements Logout$ {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>(
     Result $default(), {
-    Result successful(),
+    Result successful(AppUser user),
     Result error(Object error),
     @required Result orElse(),
   }) {
@@ -561,9 +568,9 @@ class _$Logout$ implements Logout$ {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>(
-    Result $default(Logout$ value), {
-    @required Result successful(LogoutSuccessful value),
-    @required Result error(LogoutError value),
+    Result $default(InitializeApp$ value), {
+    @required Result successful(InitializeAppSuccessful value),
+    @required Result error(InitializeAppError value),
   }) {
     assert($default != null);
     assert(successful != null);
@@ -574,9 +581,9 @@ class _$Logout$ implements Logout$ {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>(
-    Result $default(Logout$ value), {
-    Result successful(LogoutSuccessful value),
-    Result error(LogoutError value),
+    Result $default(InitializeApp$ value), {
+    Result successful(InitializeAppSuccessful value),
+    Result error(InitializeAppError value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -587,69 +594,92 @@ class _$Logout$ implements Logout$ {
   }
 }
 
-abstract class Logout$ implements Logout {
-  const factory Logout$() = _$Logout$;
+abstract class InitializeApp$ implements InitializeApp {
+  const factory InitializeApp$() = _$InitializeApp$;
 }
 
 /// @nodoc
-abstract class $LogoutSuccessfulCopyWith<$Res> {
-  factory $LogoutSuccessfulCopyWith(
-          LogoutSuccessful value, $Res Function(LogoutSuccessful) then) =
-      _$LogoutSuccessfulCopyWithImpl<$Res>;
+abstract class $InitializeAppSuccessfulCopyWith<$Res> {
+  factory $InitializeAppSuccessfulCopyWith(InitializeAppSuccessful value,
+          $Res Function(InitializeAppSuccessful) then) =
+      _$InitializeAppSuccessfulCopyWithImpl<$Res>;
+  $Res call({AppUser user});
 }
 
 /// @nodoc
-class _$LogoutSuccessfulCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res>
-    implements $LogoutSuccessfulCopyWith<$Res> {
-  _$LogoutSuccessfulCopyWithImpl(
-      LogoutSuccessful _value, $Res Function(LogoutSuccessful) _then)
-      : super(_value, (v) => _then(v as LogoutSuccessful));
+class _$InitializeAppSuccessfulCopyWithImpl<$Res>
+    extends _$InitializeAppCopyWithImpl<$Res>
+    implements $InitializeAppSuccessfulCopyWith<$Res> {
+  _$InitializeAppSuccessfulCopyWithImpl(InitializeAppSuccessful _value,
+      $Res Function(InitializeAppSuccessful) _then)
+      : super(_value, (v) => _then(v as InitializeAppSuccessful));
 
   @override
-  LogoutSuccessful get _value => super._value as LogoutSuccessful;
+  InitializeAppSuccessful get _value => super._value as InitializeAppSuccessful;
+
+  @override
+  $Res call({
+    Object user = freezed,
+  }) {
+    return _then(InitializeAppSuccessful(
+      user == freezed ? _value.user : user as AppUser,
+    ));
+  }
 }
 
 /// @nodoc
-class _$LogoutSuccessful implements LogoutSuccessful {
-  const _$LogoutSuccessful();
+class _$InitializeAppSuccessful implements InitializeAppSuccessful {
+  const _$InitializeAppSuccessful(this.user) : assert(user != null);
+
+  @override
+  final AppUser user;
 
   @override
   String toString() {
-    return 'Logout.successful()';
+    return 'InitializeApp.successful(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LogoutSuccessful);
+    return identical(this, other) ||
+        (other is InitializeAppSuccessful &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @override
+  $InitializeAppSuccessfulCopyWith<InitializeAppSuccessful> get copyWith =>
+      _$InitializeAppSuccessfulCopyWithImpl<InitializeAppSuccessful>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>(
     Result $default(), {
-    @required Result successful(),
+    @required Result successful(AppUser user),
     @required Result error(Object error),
   }) {
     assert($default != null);
     assert(successful != null);
     assert(error != null);
-    return successful();
+    return successful(user);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>(
     Result $default(), {
-    Result successful(),
+    Result successful(AppUser user),
     Result error(Object error),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (successful != null) {
-      return successful();
+      return successful(user);
     }
     return orElse();
   }
@@ -657,9 +687,9 @@ class _$LogoutSuccessful implements LogoutSuccessful {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>(
-    Result $default(Logout$ value), {
-    @required Result successful(LogoutSuccessful value),
-    @required Result error(LogoutError value),
+    Result $default(InitializeApp$ value), {
+    @required Result successful(InitializeAppSuccessful value),
+    @required Result error(InitializeAppError value),
   }) {
     assert($default != null);
     assert(successful != null);
@@ -670,9 +700,9 @@ class _$LogoutSuccessful implements LogoutSuccessful {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>(
-    Result $default(Logout$ value), {
-    Result successful(LogoutSuccessful value),
-    Result error(LogoutError value),
+    Result $default(InitializeApp$ value), {
+    Result successful(InitializeAppSuccessful value),
+    Result error(InitializeAppError value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -683,33 +713,38 @@ class _$LogoutSuccessful implements LogoutSuccessful {
   }
 }
 
-abstract class LogoutSuccessful implements Logout {
-  const factory LogoutSuccessful() = _$LogoutSuccessful;
+abstract class InitializeAppSuccessful implements InitializeApp {
+  const factory InitializeAppSuccessful(AppUser user) =
+      _$InitializeAppSuccessful;
+
+  AppUser get user;
+  $InitializeAppSuccessfulCopyWith<InitializeAppSuccessful> get copyWith;
 }
 
 /// @nodoc
-abstract class $LogoutErrorCopyWith<$Res> {
-  factory $LogoutErrorCopyWith(
-          LogoutError value, $Res Function(LogoutError) then) =
-      _$LogoutErrorCopyWithImpl<$Res>;
+abstract class $InitializeAppErrorCopyWith<$Res> {
+  factory $InitializeAppErrorCopyWith(
+          InitializeAppError value, $Res Function(InitializeAppError) then) =
+      _$InitializeAppErrorCopyWithImpl<$Res>;
   $Res call({Object error});
 }
 
 /// @nodoc
-class _$LogoutErrorCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res>
-    implements $LogoutErrorCopyWith<$Res> {
-  _$LogoutErrorCopyWithImpl(
-      LogoutError _value, $Res Function(LogoutError) _then)
-      : super(_value, (v) => _then(v as LogoutError));
+class _$InitializeAppErrorCopyWithImpl<$Res>
+    extends _$InitializeAppCopyWithImpl<$Res>
+    implements $InitializeAppErrorCopyWith<$Res> {
+  _$InitializeAppErrorCopyWithImpl(
+      InitializeAppError _value, $Res Function(InitializeAppError) _then)
+      : super(_value, (v) => _then(v as InitializeAppError));
 
   @override
-  LogoutError get _value => super._value as LogoutError;
+  InitializeAppError get _value => super._value as InitializeAppError;
 
   @override
   $Res call({
     Object error = freezed,
   }) {
-    return _then(LogoutError(
+    return _then(InitializeAppError(
       error == freezed ? _value.error : error,
     ));
   }
@@ -718,21 +753,21 @@ class _$LogoutErrorCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res>
 @Implements(ErrorAction)
 
 /// @nodoc
-class _$LogoutError implements LogoutError {
-  const _$LogoutError(this.error) : assert(error != null);
+class _$InitializeAppError implements InitializeAppError {
+  const _$InitializeAppError(this.error) : assert(error != null);
 
   @override
   final Object error;
 
   @override
   String toString() {
-    return 'Logout.error(error: $error)';
+    return 'InitializeApp.error(error: $error)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LogoutError &&
+        (other is InitializeAppError &&
             (identical(other.error, error) ||
                 const DeepCollectionEquality().equals(other.error, error)));
   }
@@ -742,14 +777,14 @@ class _$LogoutError implements LogoutError {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
 
   @override
-  $LogoutErrorCopyWith<LogoutError> get copyWith =>
-      _$LogoutErrorCopyWithImpl<LogoutError>(this, _$identity);
+  $InitializeAppErrorCopyWith<InitializeAppError> get copyWith =>
+      _$InitializeAppErrorCopyWithImpl<InitializeAppError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>(
     Result $default(), {
-    @required Result successful(),
+    @required Result successful(AppUser user),
     @required Result error(Object error),
   }) {
     assert($default != null);
@@ -762,7 +797,7 @@ class _$LogoutError implements LogoutError {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>(
     Result $default(), {
-    Result successful(),
+    Result successful(AppUser user),
     Result error(Object error),
     @required Result orElse(),
   }) {
@@ -776,9 +811,9 @@ class _$LogoutError implements LogoutError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>(
-    Result $default(Logout$ value), {
-    @required Result successful(LogoutSuccessful value),
-    @required Result error(LogoutError value),
+    Result $default(InitializeApp$ value), {
+    @required Result successful(InitializeAppSuccessful value),
+    @required Result error(InitializeAppError value),
   }) {
     assert($default != null);
     assert(successful != null);
@@ -789,9 +824,9 @@ class _$LogoutError implements LogoutError {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>(
-    Result $default(Logout$ value), {
-    Result successful(LogoutSuccessful value),
-    Result error(LogoutError value),
+    Result $default(InitializeApp$ value), {
+    Result successful(InitializeAppSuccessful value),
+    Result error(InitializeAppError value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -802,11 +837,11 @@ class _$LogoutError implements LogoutError {
   }
 }
 
-abstract class LogoutError implements Logout, ErrorAction {
-  const factory LogoutError(Object error) = _$LogoutError;
+abstract class InitializeAppError implements InitializeApp, ErrorAction {
+  const factory InitializeAppError(Object error) = _$InitializeAppError;
 
   Object get error;
-  $LogoutErrorCopyWith<LogoutError> get copyWith;
+  $InitializeAppErrorCopyWith<InitializeAppError> get copyWith;
 }
 
 /// @nodoc
@@ -1732,6 +1767,389 @@ abstract class LoginWithGoogleError implements LoginWithGoogle, ErrorAction {
 
   Object get error;
   $LoginWithGoogleErrorCopyWith<LoginWithGoogleError> get copyWith;
+}
+
+/// @nodoc
+class _$LogoutTearOff {
+  const _$LogoutTearOff();
+
+// ignore: unused_element
+  Logout$ call() {
+    return const Logout$();
+  }
+
+// ignore: unused_element
+  LogoutSuccessful successful() {
+    return const LogoutSuccessful();
+  }
+
+// ignore: unused_element
+  LogoutError error(Object error) {
+    return LogoutError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $Logout = _$LogoutTearOff();
+
+/// @nodoc
+mixin _$Logout {
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(), {
+    @required Result successful(),
+    @required Result error(Object error),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(), {
+    Result successful(),
+    Result error(Object error),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(Logout$ value), {
+    @required Result successful(LogoutSuccessful value),
+    @required Result error(LogoutError value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(Logout$ value), {
+    Result successful(LogoutSuccessful value),
+    Result error(LogoutError value),
+    @required Result orElse(),
+  });
+}
+
+/// @nodoc
+abstract class $LogoutCopyWith<$Res> {
+  factory $LogoutCopyWith(Logout value, $Res Function(Logout) then) =
+      _$LogoutCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$LogoutCopyWithImpl<$Res> implements $LogoutCopyWith<$Res> {
+  _$LogoutCopyWithImpl(this._value, this._then);
+
+  final Logout _value;
+  // ignore: unused_field
+  final $Res Function(Logout) _then;
+}
+
+/// @nodoc
+abstract class $Logout$CopyWith<$Res> {
+  factory $Logout$CopyWith(Logout$ value, $Res Function(Logout$) then) =
+      _$Logout$CopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$Logout$CopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res>
+    implements $Logout$CopyWith<$Res> {
+  _$Logout$CopyWithImpl(Logout$ _value, $Res Function(Logout$) _then)
+      : super(_value, (v) => _then(v as Logout$));
+
+  @override
+  Logout$ get _value => super._value as Logout$;
+}
+
+/// @nodoc
+class _$Logout$ implements Logout$ {
+  const _$Logout$();
+
+  @override
+  String toString() {
+    return 'Logout()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is Logout$);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(), {
+    @required Result successful(),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return $default();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(), {
+    Result successful(),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if ($default != null) {
+      return $default();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(Logout$ value), {
+    @required Result successful(LogoutSuccessful value),
+    @required Result error(LogoutError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(Logout$ value), {
+    Result successful(LogoutSuccessful value),
+    Result error(LogoutError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Logout$ implements Logout {
+  const factory Logout$() = _$Logout$;
+}
+
+/// @nodoc
+abstract class $LogoutSuccessfulCopyWith<$Res> {
+  factory $LogoutSuccessfulCopyWith(
+          LogoutSuccessful value, $Res Function(LogoutSuccessful) then) =
+      _$LogoutSuccessfulCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$LogoutSuccessfulCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res>
+    implements $LogoutSuccessfulCopyWith<$Res> {
+  _$LogoutSuccessfulCopyWithImpl(
+      LogoutSuccessful _value, $Res Function(LogoutSuccessful) _then)
+      : super(_value, (v) => _then(v as LogoutSuccessful));
+
+  @override
+  LogoutSuccessful get _value => super._value as LogoutSuccessful;
+}
+
+/// @nodoc
+class _$LogoutSuccessful implements LogoutSuccessful {
+  const _$LogoutSuccessful();
+
+  @override
+  String toString() {
+    return 'Logout.successful()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is LogoutSuccessful);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(), {
+    @required Result successful(),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return successful();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(), {
+    Result successful(),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (successful != null) {
+      return successful();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(Logout$ value), {
+    @required Result successful(LogoutSuccessful value),
+    @required Result error(LogoutError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(Logout$ value), {
+    Result successful(LogoutSuccessful value),
+    Result error(LogoutError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutSuccessful implements Logout {
+  const factory LogoutSuccessful() = _$LogoutSuccessful;
+}
+
+/// @nodoc
+abstract class $LogoutErrorCopyWith<$Res> {
+  factory $LogoutErrorCopyWith(
+          LogoutError value, $Res Function(LogoutError) then) =
+      _$LogoutErrorCopyWithImpl<$Res>;
+  $Res call({Object error});
+}
+
+/// @nodoc
+class _$LogoutErrorCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res>
+    implements $LogoutErrorCopyWith<$Res> {
+  _$LogoutErrorCopyWithImpl(
+      LogoutError _value, $Res Function(LogoutError) _then)
+      : super(_value, (v) => _then(v as LogoutError));
+
+  @override
+  LogoutError get _value => super._value as LogoutError;
+
+  @override
+  $Res call({
+    Object error = freezed,
+  }) {
+    return _then(LogoutError(
+      error == freezed ? _value.error : error,
+    ));
+  }
+}
+
+@Implements(ErrorAction)
+
+/// @nodoc
+class _$LogoutError implements LogoutError {
+  const _$LogoutError(this.error) : assert(error != null);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'Logout.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is LogoutError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @override
+  $LogoutErrorCopyWith<LogoutError> get copyWith =>
+      _$LogoutErrorCopyWithImpl<LogoutError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(), {
+    @required Result successful(),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(), {
+    Result successful(),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(Logout$ value), {
+    @required Result successful(LogoutSuccessful value),
+    @required Result error(LogoutError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(Logout$ value), {
+    Result successful(LogoutSuccessful value),
+    Result error(LogoutError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutError implements Logout, ErrorAction {
+  const factory LogoutError(Object error) = _$LogoutError;
+
+  Object get error;
+  $LogoutErrorCopyWith<LogoutError> get copyWith;
 }
 
 /// @nodoc

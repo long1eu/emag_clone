@@ -3,6 +3,7 @@
 // on 05/01/2021
 
 import 'package:emag_clone/src/actions/index.dart';
+import 'package:emag_clone/src/actions/products/index.dart';
 import 'package:emag_clone/src/data/auth_api.dart';
 import 'package:emag_clone/src/models/auth/index.dart';
 import 'package:emag_clone/src/models/index.dart';
@@ -19,6 +20,7 @@ class AuthEpics {
 
   Epic<AppState> get epics {
     return combineEpics(<Epic<AppState>>[
+      TypedEpic<AppState, InitializeApp$>(_initializeApp),
       TypedEpic<AppState, Login$>(_login),
       TypedEpic<AppState, Register$>(_register),
       TypedEpic<AppState, LoginWithGoogle$>(_loginWithGoogle),
@@ -27,11 +29,25 @@ class AuthEpics {
     ]);
   }
 
+  Stream<AppAction> _initializeApp(Stream<InitializeApp$> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((InitializeApp$ action) => Stream<InitializeApp$>.value(action)
+            .asyncMap((InitializeApp$ action) => _api.initializeApp())
+            .expand((AppUser user) => <AppAction>[
+                  InitializeApp.successful(user),
+                  const GetProducts(),
+                ])
+            .onErrorReturnWith((dynamic error) => InitializeApp.error(error)));
+  }
+
   Stream<AppAction> _login(Stream<Login$> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((Login$ action) => Stream<Login$>.value(action)
             .asyncMap((Login$ action) => _api.login(email: action.email, password: action.password))
-            .map((AppUser user) => Login.successful(user))
+            .expand((AppUser user) => <AppAction>[
+                  Login.successful(user),
+                  const GetProducts(),
+                ])
             .onErrorReturnWith((dynamic error) => Login.error(error))
             .doOnData(action.response));
   }
@@ -44,7 +60,10 @@ class AuthEpics {
                   password: store.state.auth.info.password,
                   displayName: store.state.auth.info.displayName ?? store.state.auth.info.email.split('@')[0],
                 ))
-            .map((AppUser user) => Register.successful(user))
+            .expand((AppUser user) => <AppAction>[
+                  Register.successful(user),
+                  const GetProducts(),
+                ])
             .onErrorReturnWith((dynamic error) => Register.error(error))
             .doOnData(action.response));
   }
@@ -53,7 +72,10 @@ class AuthEpics {
     return actions //
         .flatMap((LoginWithGoogle$ action) => Stream<LoginWithGoogle$>.value(action)
             .asyncMap((LoginWithGoogle$ action) => _api.loginWithGoogle())
-            .map((AppUser user) => LoginWithGoogle.successful(user))
+            .expand((AppUser user) => <AppAction>[
+                  LoginWithGoogle.successful(user),
+                  const GetProducts(),
+                ])
             .onErrorReturnWith((dynamic error) => LoginWithGoogle.error(error))
             .doOnData(action.response));
   }

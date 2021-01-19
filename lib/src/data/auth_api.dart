@@ -21,6 +21,12 @@ class AuthApi {
   final FirebaseFirestore _firestore;
   final GoogleSignIn _google;
 
+  Future<AppUser> initializeApp() async {
+    final User user = _auth.currentUser;
+    final DocumentSnapshot snapshot = await _firestore.doc('users/${user.uid}').get();
+    return AppUser.fromJson(snapshot.data());
+  }
+
   Future<AppUser> login({@required String email, @required String password}) async {
     final UserCredential result = await _auth.signInWithEmailAndPassword(email: email, password: password);
     final DocumentSnapshot snapshot = await _firestore.doc('users/${result.user.uid}').get();

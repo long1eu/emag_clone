@@ -4,6 +4,7 @@
 
 import 'package:emag_clone/src/presentation/home.dart';
 import 'package:emag_clone/src/presentation/login/reset_page.dart';
+import 'package:emag_clone/src/presentation/products/products_search_page.dart';
 import 'package:emag_clone/src/presentation/register/name_page.dart';
 import 'package:emag_clone/src/presentation/register/password_page.dart';
 import 'package:emag_clone/src/presentation/register/register_page.dart';
@@ -16,6 +17,7 @@ class AppRoutes {
   static const String name = '/name';
   static const String password = '/password';
   static const String resetPassword = '/resetPassword';
+  static const String searchProducts = '/searchProducts';
 
   static final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
     home: (BuildContext context) => const Home(),
@@ -23,5 +25,6 @@ class AppRoutes {
     name: (BuildContext context) => const NamePage(),
     password: (BuildContext context) => const PasswordPage(),
     resetPassword: (BuildContext context) => const ResetPasswordPage(),
+    searchProducts: (BuildContext context) => const ProductsSearchPage(),
   };
 }

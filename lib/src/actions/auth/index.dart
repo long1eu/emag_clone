@@ -10,9 +10,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'forgot_password.dart';
 part 'index.freezed.dart';
-part 'logout.dart';
+part 'initialize_app.dart';
 part 'login.dart';
 part 'login_with_google.dart';
+part 'logout.dart';
 part 'register.dart';
 part 'set.dart';
 

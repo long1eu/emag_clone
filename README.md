@@ -17,7 +17,7 @@ eMag app clone
 * [x] forgot password (10')
 
 ## HomePage (120')
-* [ ] search products (15')
+* [x] search products (15')
 * [ ] highlight products per category (25')
 * [ ] add products to cart (10')
 * [ ] show all products from a category (25')

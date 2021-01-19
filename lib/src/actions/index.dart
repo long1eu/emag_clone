@@ -3,6 +3,7 @@
 // on 05/01/2021
 
 export 'auth/index.dart';
+export 'products/index.dart';
 
 abstract class AppAction {
   const AppAction();

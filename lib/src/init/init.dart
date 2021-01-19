@@ -3,7 +3,9 @@
 // on 05/01/2021
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:emag_clone/src/actions/index.dart';
 import 'package:emag_clone/src/data/auth_api.dart';
+import 'package:emag_clone/src/data/products_api.dart';
 import 'package:emag_clone/src/epics/app_epics.dart';
 import 'package:emag_clone/src/models/index.dart';
 import 'package:emag_clone/src/reducer/reducer.dart';
@@ -20,8 +22,9 @@ Future<Store<AppState>> init() async {
   final FirebaseAuth auth = FirebaseAuth.instance;
   final GoogleSignIn google = GoogleSignIn();
   final AuthApi authApi = AuthApi(auth: auth, firestore: firestore, google: google);
+  final ProductsApi productsApi = ProductsApi(firestore: firestore);
 
-  final AppEpics epics = AppEpics(authApi: authApi);
+  final AppEpics epics = AppEpics(authApi: authApi, productsApi: productsApi);
   final AppState initialState = AppState.initialState();
   return Store<AppState>(
     reducer,
@@ -29,5 +32,5 @@ Future<Store<AppState>> init() async {
     middleware: <Middleware<AppState>>[
       EpicMiddleware<AppState>(epics.epics),
     ],
-  );
+  )..dispatch(const InitializeApp());
 }
