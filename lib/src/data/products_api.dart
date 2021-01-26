@@ -30,4 +30,19 @@ class ProductsApi {
         .map((QueryDocumentSnapshot item) => Product.fromJson(item.data()))
         .toList();
   }
+
+  Future<void> createReview(String productId, String uid, String text, int review) async {
+    final DocumentReference ref = _firestore.collection('reviews').doc();
+
+    final ProductReview item = ProductReview((ProductReviewBuilder b) {
+      b
+        ..id = ref.id
+        ..productId = productId
+        ..uid = uid
+        ..text = text
+        ..review = review;
+    });
+
+    await ref.set(item.json);
+  }
 }

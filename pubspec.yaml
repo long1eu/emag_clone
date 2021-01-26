@@ -20,6 +20,7 @@ dependencies:
 
   # flutter
   flutter_redux: ^0.7.0
+  photo_view: ^0.10.3
 
   # dart
   redux: ^4.0.0+3

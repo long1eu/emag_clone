@@ -10,6 +10,432 @@ part of products_actions;
 T _$identity<T>(T value) => value;
 
 /// @nodoc
+class _$CreateReviewTearOff {
+  const _$CreateReviewTearOff();
+
+// ignore: unused_element
+  CreateReview$ call(String text, int review) {
+    return CreateReview$(
+      text,
+      review,
+    );
+  }
+
+// ignore: unused_element
+  CreateReviewSuccessful successful() {
+    return const CreateReviewSuccessful();
+  }
+
+// ignore: unused_element
+  CreateReviewError error(Object error) {
+    return CreateReviewError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $CreateReview = _$CreateReviewTearOff();
+
+/// @nodoc
+mixin _$CreateReview {
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(String text, int review), {
+    @required Result successful(),
+    @required Result error(Object error),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(String text, int review), {
+    Result successful(),
+    Result error(Object error),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(CreateReview$ value), {
+    @required Result successful(CreateReviewSuccessful value),
+    @required Result error(CreateReviewError value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(CreateReview$ value), {
+    Result successful(CreateReviewSuccessful value),
+    Result error(CreateReviewError value),
+    @required Result orElse(),
+  });
+}
+
+/// @nodoc
+abstract class $CreateReviewCopyWith<$Res> {
+  factory $CreateReviewCopyWith(
+          CreateReview value, $Res Function(CreateReview) then) =
+      _$CreateReviewCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$CreateReviewCopyWithImpl<$Res> implements $CreateReviewCopyWith<$Res> {
+  _$CreateReviewCopyWithImpl(this._value, this._then);
+
+  final CreateReview _value;
+  // ignore: unused_field
+  final $Res Function(CreateReview) _then;
+}
+
+/// @nodoc
+abstract class $CreateReview$CopyWith<$Res> {
+  factory $CreateReview$CopyWith(
+          CreateReview$ value, $Res Function(CreateReview$) then) =
+      _$CreateReview$CopyWithImpl<$Res>;
+  $Res call({String text, int review});
+}
+
+/// @nodoc
+class _$CreateReview$CopyWithImpl<$Res> extends _$CreateReviewCopyWithImpl<$Res>
+    implements $CreateReview$CopyWith<$Res> {
+  _$CreateReview$CopyWithImpl(
+      CreateReview$ _value, $Res Function(CreateReview$) _then)
+      : super(_value, (v) => _then(v as CreateReview$));
+
+  @override
+  CreateReview$ get _value => super._value as CreateReview$;
+
+  @override
+  $Res call({
+    Object text = freezed,
+    Object review = freezed,
+  }) {
+    return _then(CreateReview$(
+      text == freezed ? _value.text : text as String,
+      review == freezed ? _value.review : review as int,
+    ));
+  }
+}
+
+/// @nodoc
+class _$CreateReview$ implements CreateReview$ {
+  const _$CreateReview$(this.text, this.review)
+      : assert(text != null),
+        assert(review != null);
+
+  @override
+  final String text;
+  @override
+  final int review;
+
+  @override
+  String toString() {
+    return 'CreateReview(text: $text, review: $review)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is CreateReview$ &&
+            (identical(other.text, text) ||
+                const DeepCollectionEquality().equals(other.text, text)) &&
+            (identical(other.review, review) ||
+                const DeepCollectionEquality().equals(other.review, review)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(text) ^
+      const DeepCollectionEquality().hash(review);
+
+  @override
+  $CreateReview$CopyWith<CreateReview$> get copyWith =>
+      _$CreateReview$CopyWithImpl<CreateReview$>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(String text, int review), {
+    @required Result successful(),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return $default(text, review);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(String text, int review), {
+    Result successful(),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if ($default != null) {
+      return $default(text, review);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(CreateReview$ value), {
+    @required Result successful(CreateReviewSuccessful value),
+    @required Result error(CreateReviewError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(CreateReview$ value), {
+    Result successful(CreateReviewSuccessful value),
+    Result error(CreateReviewError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateReview$ implements CreateReview {
+  const factory CreateReview$(String text, int review) = _$CreateReview$;
+
+  String get text;
+  int get review;
+  $CreateReview$CopyWith<CreateReview$> get copyWith;
+}
+
+/// @nodoc
+abstract class $CreateReviewSuccessfulCopyWith<$Res> {
+  factory $CreateReviewSuccessfulCopyWith(CreateReviewSuccessful value,
+          $Res Function(CreateReviewSuccessful) then) =
+      _$CreateReviewSuccessfulCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$CreateReviewSuccessfulCopyWithImpl<$Res>
+    extends _$CreateReviewCopyWithImpl<$Res>
+    implements $CreateReviewSuccessfulCopyWith<$Res> {
+  _$CreateReviewSuccessfulCopyWithImpl(CreateReviewSuccessful _value,
+      $Res Function(CreateReviewSuccessful) _then)
+      : super(_value, (v) => _then(v as CreateReviewSuccessful));
+
+  @override
+  CreateReviewSuccessful get _value => super._value as CreateReviewSuccessful;
+}
+
+/// @nodoc
+class _$CreateReviewSuccessful implements CreateReviewSuccessful {
+  const _$CreateReviewSuccessful();
+
+  @override
+  String toString() {
+    return 'CreateReview.successful()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is CreateReviewSuccessful);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(String text, int review), {
+    @required Result successful(),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return successful();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(String text, int review), {
+    Result successful(),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (successful != null) {
+      return successful();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(CreateReview$ value), {
+    @required Result successful(CreateReviewSuccessful value),
+    @required Result error(CreateReviewError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(CreateReview$ value), {
+    Result successful(CreateReviewSuccessful value),
+    Result error(CreateReviewError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateReviewSuccessful implements CreateReview {
+  const factory CreateReviewSuccessful() = _$CreateReviewSuccessful;
+}
+
+/// @nodoc
+abstract class $CreateReviewErrorCopyWith<$Res> {
+  factory $CreateReviewErrorCopyWith(
+          CreateReviewError value, $Res Function(CreateReviewError) then) =
+      _$CreateReviewErrorCopyWithImpl<$Res>;
+  $Res call({Object error});
+}
+
+/// @nodoc
+class _$CreateReviewErrorCopyWithImpl<$Res>
+    extends _$CreateReviewCopyWithImpl<$Res>
+    implements $CreateReviewErrorCopyWith<$Res> {
+  _$CreateReviewErrorCopyWithImpl(
+      CreateReviewError _value, $Res Function(CreateReviewError) _then)
+      : super(_value, (v) => _then(v as CreateReviewError));
+
+  @override
+  CreateReviewError get _value => super._value as CreateReviewError;
+
+  @override
+  $Res call({
+    Object error = freezed,
+  }) {
+    return _then(CreateReviewError(
+      error == freezed ? _value.error : error,
+    ));
+  }
+}
+
+@Implements(ErrorAction)
+
+/// @nodoc
+class _$CreateReviewError implements CreateReviewError {
+  const _$CreateReviewError(this.error) : assert(error != null);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'CreateReview.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is CreateReviewError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @override
+  $CreateReviewErrorCopyWith<CreateReviewError> get copyWith =>
+      _$CreateReviewErrorCopyWithImpl<CreateReviewError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(String text, int review), {
+    @required Result successful(),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(String text, int review), {
+    Result successful(),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(CreateReview$ value), {
+    @required Result successful(CreateReviewSuccessful value),
+    @required Result error(CreateReviewError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(CreateReview$ value), {
+    Result successful(CreateReviewSuccessful value),
+    Result error(CreateReviewError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateReviewError implements CreateReview, ErrorAction {
+  const factory CreateReviewError(Object error) = _$CreateReviewError;
+
+  Object get error;
+  $CreateReviewErrorCopyWith<CreateReviewError> get copyWith;
+}
+
+/// @nodoc
 class _$GetProductsTearOff {
   const _$GetProductsTearOff();
 
@@ -870,4 +1296,247 @@ abstract class SearchProductsError implements SearchProducts, ErrorAction {
 
   Object get error;
   $SearchProductsErrorCopyWith<SearchProductsError> get copyWith;
+}
+
+/// @nodoc
+class _$SetSelectedCategoryTearOff {
+  const _$SetSelectedCategoryTearOff();
+
+// ignore: unused_element
+  SetSelectedCategory$ call(String category) {
+    return SetSelectedCategory$(
+      category,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $SetSelectedCategory = _$SetSelectedCategoryTearOff();
+
+/// @nodoc
+mixin _$SetSelectedCategory {
+  String get category;
+
+  $SetSelectedCategoryCopyWith<SetSelectedCategory> get copyWith;
+}
+
+/// @nodoc
+abstract class $SetSelectedCategoryCopyWith<$Res> {
+  factory $SetSelectedCategoryCopyWith(
+          SetSelectedCategory value, $Res Function(SetSelectedCategory) then) =
+      _$SetSelectedCategoryCopyWithImpl<$Res>;
+  $Res call({String category});
+}
+
+/// @nodoc
+class _$SetSelectedCategoryCopyWithImpl<$Res>
+    implements $SetSelectedCategoryCopyWith<$Res> {
+  _$SetSelectedCategoryCopyWithImpl(this._value, this._then);
+
+  final SetSelectedCategory _value;
+  // ignore: unused_field
+  final $Res Function(SetSelectedCategory) _then;
+
+  @override
+  $Res call({
+    Object category = freezed,
+  }) {
+    return _then(_value.copyWith(
+      category: category == freezed ? _value.category : category as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $SetSelectedCategory$CopyWith<$Res>
+    implements $SetSelectedCategoryCopyWith<$Res> {
+  factory $SetSelectedCategory$CopyWith(SetSelectedCategory$ value,
+          $Res Function(SetSelectedCategory$) then) =
+      _$SetSelectedCategory$CopyWithImpl<$Res>;
+  @override
+  $Res call({String category});
+}
+
+/// @nodoc
+class _$SetSelectedCategory$CopyWithImpl<$Res>
+    extends _$SetSelectedCategoryCopyWithImpl<$Res>
+    implements $SetSelectedCategory$CopyWith<$Res> {
+  _$SetSelectedCategory$CopyWithImpl(
+      SetSelectedCategory$ _value, $Res Function(SetSelectedCategory$) _then)
+      : super(_value, (v) => _then(v as SetSelectedCategory$));
+
+  @override
+  SetSelectedCategory$ get _value => super._value as SetSelectedCategory$;
+
+  @override
+  $Res call({
+    Object category = freezed,
+  }) {
+    return _then(SetSelectedCategory$(
+      category == freezed ? _value.category : category as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SetSelectedCategory$ implements SetSelectedCategory$ {
+  const _$SetSelectedCategory$(this.category) : assert(category != null);
+
+  @override
+  final String category;
+
+  @override
+  String toString() {
+    return 'SetSelectedCategory(category: $category)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SetSelectedCategory$ &&
+            (identical(other.category, category) ||
+                const DeepCollectionEquality()
+                    .equals(other.category, category)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(category);
+
+  @override
+  $SetSelectedCategory$CopyWith<SetSelectedCategory$> get copyWith =>
+      _$SetSelectedCategory$CopyWithImpl<SetSelectedCategory$>(
+          this, _$identity);
+}
+
+abstract class SetSelectedCategory$ implements SetSelectedCategory {
+  const factory SetSelectedCategory$(String category) = _$SetSelectedCategory$;
+
+  @override
+  String get category;
+  @override
+  $SetSelectedCategory$CopyWith<SetSelectedCategory$> get copyWith;
+}
+
+/// @nodoc
+class _$SetSelectedProductIdTearOff {
+  const _$SetSelectedProductIdTearOff();
+
+// ignore: unused_element
+  SetSelectedProductId$ call(String productId) {
+    return SetSelectedProductId$(
+      productId,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $SetSelectedProductId = _$SetSelectedProductIdTearOff();
+
+/// @nodoc
+mixin _$SetSelectedProductId {
+  String get productId;
+
+  $SetSelectedProductIdCopyWith<SetSelectedProductId> get copyWith;
+}
+
+/// @nodoc
+abstract class $SetSelectedProductIdCopyWith<$Res> {
+  factory $SetSelectedProductIdCopyWith(SetSelectedProductId value,
+          $Res Function(SetSelectedProductId) then) =
+      _$SetSelectedProductIdCopyWithImpl<$Res>;
+  $Res call({String productId});
+}
+
+/// @nodoc
+class _$SetSelectedProductIdCopyWithImpl<$Res>
+    implements $SetSelectedProductIdCopyWith<$Res> {
+  _$SetSelectedProductIdCopyWithImpl(this._value, this._then);
+
+  final SetSelectedProductId _value;
+  // ignore: unused_field
+  final $Res Function(SetSelectedProductId) _then;
+
+  @override
+  $Res call({
+    Object productId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      productId: productId == freezed ? _value.productId : productId as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $SetSelectedProductId$CopyWith<$Res>
+    implements $SetSelectedProductIdCopyWith<$Res> {
+  factory $SetSelectedProductId$CopyWith(SetSelectedProductId$ value,
+          $Res Function(SetSelectedProductId$) then) =
+      _$SetSelectedProductId$CopyWithImpl<$Res>;
+  @override
+  $Res call({String productId});
+}
+
+/// @nodoc
+class _$SetSelectedProductId$CopyWithImpl<$Res>
+    extends _$SetSelectedProductIdCopyWithImpl<$Res>
+    implements $SetSelectedProductId$CopyWith<$Res> {
+  _$SetSelectedProductId$CopyWithImpl(
+      SetSelectedProductId$ _value, $Res Function(SetSelectedProductId$) _then)
+      : super(_value, (v) => _then(v as SetSelectedProductId$));
+
+  @override
+  SetSelectedProductId$ get _value => super._value as SetSelectedProductId$;
+
+  @override
+  $Res call({
+    Object productId = freezed,
+  }) {
+    return _then(SetSelectedProductId$(
+      productId == freezed ? _value.productId : productId as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SetSelectedProductId$ implements SetSelectedProductId$ {
+  const _$SetSelectedProductId$(this.productId) : assert(productId != null);
+
+  @override
+  final String productId;
+
+  @override
+  String toString() {
+    return 'SetSelectedProductId(productId: $productId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SetSelectedProductId$ &&
+            (identical(other.productId, productId) ||
+                const DeepCollectionEquality()
+                    .equals(other.productId, productId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(productId);
+
+  @override
+  $SetSelectedProductId$CopyWith<SetSelectedProductId$> get copyWith =>
+      _$SetSelectedProductId$CopyWithImpl<SetSelectedProductId$>(
+          this, _$identity);
+}
+
+abstract class SetSelectedProductId$ implements SetSelectedProductId {
+  const factory SetSelectedProductId$(String productId) =
+      _$SetSelectedProductId$;
+
+  @override
+  String get productId;
+  @override
+  $SetSelectedProductId$CopyWith<SetSelectedProductId$> get copyWith;
 }

@@ -12,3 +12,6 @@ import 'package:redux/redux.dart';
 
 part 'products_container.dart';
 part 'search_result_container.dart';
+part 'selected_category_container.dart';
+part 'selected_category_products_container.dart';
+part 'selected_product_container.dart';

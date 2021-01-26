@@ -17,6 +17,12 @@ abstract class ProductsState implements Built<ProductsState, ProductsStateBuilde
 
   BuiltList<Product> get searchResult;
 
+  @nullable
+  String get selectedCategory;
+
+  @nullable
+  String get selectedProductId;
+
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;
 
   static Serializer<ProductsState> get serializer => _$productsStateSerializer;

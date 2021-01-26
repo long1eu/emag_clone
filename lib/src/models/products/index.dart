@@ -13,3 +13,4 @@ part 'index.g.dart';
 part 'product.dart';
 part 'product_state.dart';
 part 'products_state.dart';
+part 'review.dart';

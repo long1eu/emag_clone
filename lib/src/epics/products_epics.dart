@@ -20,6 +20,7 @@ class ProductsEpics {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, GetProducts$>(_getProducts),
       TypedEpic<AppState, SearchProducts$>(_searchProducts),
+      TypedEpic<AppState, CreateReview$>(_createReview),
     ]);
   }
 
@@ -38,5 +39,18 @@ class ProductsEpics {
             .asyncMap((SearchProducts$ action) => _api.searchProducts(action.query))
             .map((List<Product> products) => SearchProducts.successful(products))
             .onErrorReturnWith((dynamic error) => SearchProducts.error(error)));
+  }
+
+  Stream<AppAction> _createReview(Stream<CreateReview$> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((CreateReview$ action) => Stream<CreateReview$>.value(action)
+            .asyncMap((CreateReview$ action) => _api.createReview(
+                  store.state.products.selectedProductId,
+                  store.state.auth.user.uid,
+                  action.text,
+                  action.review,
+                ))
+            .mapTo(const CreateReview.successful())
+            .onErrorReturnWith((dynamic error) => CreateReview.error(error)));
   }
 }
